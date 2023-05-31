@@ -1,0 +1,163 @@
+
+
+================================================================
+== Vitis HLS Report for 'test'
+================================================================
+* Date:           Tue May 30 15:43:36 2023
+
+* Version:        2021.2 (Build 3367213 on Tue Oct 19 02:47:39 MDT 2021)
+* Project:        hls_kernel_test
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: virtexuplus
+* Target device:  xcvu11p-flga2577-1-e
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  6.509 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+-----------+-----------+-----+-----+---------+
+    |  Latency (cycles) |   Latency (absolute)  |  Interval | Pipeline|
+    |   min   |   max   |    min    |    max    | min | max |   Type  |
+    +---------+---------+-----------+-----------+-----+-----+---------+
+    |        1|        1|  10.000 ns|  10.000 ns|    1|    1|      yes|
+    +---------+---------+-----------+-----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++---------------------+---------+------+---------+---------+-----+
+|         Name        | BRAM_18K|  DSP |    FF   |   LUT   | URAM|
++---------------------+---------+------+---------+---------+-----+
+|DSP                  |        -|     -|        -|        -|    -|
+|Expression           |        -|     -|        0|      627|    -|
+|FIFO                 |        -|     -|        -|        -|    -|
+|Instance             |        -|     -|        -|        -|    -|
+|Memory               |        -|     -|        -|        -|    -|
+|Multiplexer          |        -|     -|        -|       18|    -|
+|Register             |        -|     -|        2|        -|    -|
++---------------------+---------+------+---------+---------+-----+
+|Total                |        0|     0|        2|      645|    0|
++---------------------+---------+------+---------+---------+-----+
+|Available SLR        |     1344|  3072|   864000|   432000|  320|
++---------------------+---------+------+---------+---------+-----+
+|Utilization SLR (%)  |        0|     0|       ~0|       ~0|    0|
++---------------------+---------+------+---------+---------+-----+
+|Available            |     4032|  9216|  2592000|  1296000|  960|
++---------------------+---------+------+---------+---------+-----+
+|Utilization (%)      |        0|     0|       ~0|       ~0|    0|
++---------------------+---------+------+---------+---------+-----+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +----------------------------------+----------+----+---+----+------------+------------+
+    |           Variable Name          | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +----------------------------------+----------+----+---+----+------------+------------+
+    |add_ln70_10_fu_371_p2             |         +|   0|  0|  32|          32|          32|
+    |add_ln70_11_fu_377_p2             |         +|   0|  0|  39|          32|          32|
+    |add_ln70_12_fu_383_p2             |         +|   0|  0|  32|          32|          32|
+    |add_ln70_13_fu_389_p2             |         +|   0|  0|  32|          32|          32|
+    |add_ln70_1_fu_317_p2              |         +|   0|  0|  39|          32|          32|
+    |add_ln70_2_fu_323_p2              |         +|   0|  0|  32|          32|          32|
+    |add_ln70_3_fu_329_p2              |         +|   0|  0|  32|          32|          32|
+    |add_ln70_4_fu_335_p2              |         +|   0|  0|  39|          32|          32|
+    |add_ln70_5_fu_341_p2              |         +|   0|  0|  32|          32|          32|
+    |add_ln70_6_fu_347_p2              |         +|   0|  0|  32|          32|          32|
+    |add_ln70_7_fu_353_p2              |         +|   0|  0|  39|          32|          32|
+    |add_ln70_8_fu_359_p2              |         +|   0|  0|  39|          32|          32|
+    |add_ln70_9_fu_365_p2              |         +|   0|  0|  32|          32|          32|
+    |add_ln70_fu_311_p2                |         +|   0|  0|  32|          32|          32|
+    |sum_V_1_fu_395_p2                 |         +|   0|  0|  32|          32|          32|
+    |sub_ln1558_1_fu_429_p2            |         -|   0|  0|  36|           1|          29|
+    |sub_ln1558_fu_409_p2              |         -|   0|  0|  39|           1|          32|
+    |ap_block_pp0_stage0_01001         |        or|   0|  0|   2|           1|           1|
+    |ap_block_state1_pp0_stage0_iter0  |        or|   0|  0|   2|           1|           1|
+    |ap_block_state2_pp0_stage0_iter1  |        or|   0|  0|   2|           1|           1|
+    |select_ln1558_fu_449_p3           |    select|   0|  0|  29|           1|          29|
+    |ap_enable_pp0                     |       xor|   0|  0|   2|           1|           2|
+    +----------------------------------+----------+----+---+----+------------+------------+
+    |Total                             |          |   0|  0| 627|         487|         575|
+    +----------------------------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    +-----------------------+----+-----------+-----+-----------+
+    |          Name         | LUT| Input Size| Bits| Total Bits|
+    +-----------------------+----+-----------+-----+-----------+
+    |inStream_TDATA_blk_n   |   9|          2|    1|          2|
+    |outStream_TDATA_blk_n  |   9|          2|    1|          2|
+    +-----------------------+----+-----------+-----+-----------+
+    |Total                  |  18|          4|    2|          4|
+    +-----------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +-------------------------+---+----+-----+-----------+
+    |           Name          | FF| LUT| Bits| Const Bits|
+    +-------------------------+---+----+-----+-----------+
+    |ap_CS_fsm                |  1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter1  |  1|   0|    1|          0|
+    +-------------------------+---+----+-----+-----------+
+    |Total                    |  2|   0|    2|          0|
+    +-------------------------+---+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++-------------------+-----+-----+------------+--------------------+--------------+
+|     RTL Ports     | Dir | Bits|  Protocol  |    Source Object   |    C Type    |
++-------------------+-----+-----+------------+--------------------+--------------+
+|ap_local_block     |  out|    1|  ap_ctrl_hs|                test|  return value|
+|ap_local_deadlock  |  out|    1|  ap_ctrl_hs|                test|  return value|
+|ap_clk             |   in|    1|  ap_ctrl_hs|                test|  return value|
+|ap_rst_n           |   in|    1|  ap_ctrl_hs|                test|  return value|
+|ap_start           |   in|    1|  ap_ctrl_hs|                test|  return value|
+|ap_done            |  out|    1|  ap_ctrl_hs|                test|  return value|
+|ap_idle            |  out|    1|  ap_ctrl_hs|                test|  return value|
+|ap_ready           |  out|    1|  ap_ctrl_hs|                test|  return value|
+|inStream_TVALID    |   in|    1|        axis|   inStream_V_last_V|       pointer|
+|inStream_TREADY    |  out|    1|        axis|   inStream_V_last_V|       pointer|
+|inStream_TLAST     |   in|    1|        axis|   inStream_V_last_V|       pointer|
+|outStream_TREADY   |   in|    1|        axis|  outStream_V_last_V|       pointer|
+|outStream_TVALID   |  out|    1|        axis|  outStream_V_last_V|       pointer|
+|outStream_TLAST    |  out|    1|        axis|  outStream_V_last_V|       pointer|
+|inStream_TDATA     |   in|  512|        axis|   inStream_V_data_V|       pointer|
+|inStream_TKEEP     |   in|   64|        axis|   inStream_V_keep_V|       pointer|
+|inStream_TSTRB     |   in|   64|        axis|   inStream_V_strb_V|       pointer|
+|outStream_TDATA    |  out|  512|        axis|  outStream_V_data_V|       pointer|
+|outStream_TKEEP    |  out|   64|        axis|  outStream_V_keep_V|       pointer|
+|outStream_TSTRB    |  out|   64|        axis|  outStream_V_strb_V|       pointer|
++-------------------+-----+-----+------------+--------------------+--------------+
+

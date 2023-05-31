@@ -1,0 +1,118 @@
+
+
+================================================================
+== Synthesis Summary Report of 'test'
+================================================================
++ General Information: 
+    * Date:           Tue May 30 15:43:36 2023
+    * Version:        2021.2 (Build 3367213 on Tue Oct 19 02:47:39 MDT 2021)
+    * Project:        hls_kernel_test
+    * Solution:       solution1 (Vivado IP Flow Target)
+    * Product family: virtexuplus
+    * Target device:  xcvu11p-flga2577-1-e
+    
+
++ Performance & Resource Estimates: 
+    
+    PS: '+' for module; 'o' for loop; '*' for dataflow
+    +--------+------+------+---------+--------+----------+---------+------+----------+------+----+---------+-----------+-----+
+    | Modules| Issue|      | Latency | Latency| Iteration|         | Trip |          |      |    |         |           |     |
+    | & Loops| Type | Slack| (cycles)|  (ns)  |  Latency | Interval| Count| Pipelined| BRAM | DSP|    FF   |    LUT    | URAM|
+    +--------+------+------+---------+--------+----------+---------+------+----------+------+----+---------+-----------+-----+
+    |+ test  |    II|  0.79|        1|  10.000|         -|        1|     -|       yes|     -|   -|  2 (~0%)|  645 (~0%)|    -|
+    +--------+------+------+---------+--------+----------+---------+------+----------+------+----+---------+-----------+-----+
+
+
+================================================================
+== HW Interfaces
+================================================================
+* AXIS
++-----------+---------------+-------+-------+-------+--------+-------+--------+
+| Interface | Register Mode | TDATA | TKEEP | TLAST | TREADY | TSTRB | TVALID |
++-----------+---------------+-------+-------+-------+--------+-------+--------+
+| inStream  | both          | 512   | 64    | 1     | 1      | 64    | 1      |
+| outStream | both          | 512   | 64    | 1     | 1      | 64    | 1      |
++-----------+---------------+-------+-------+-------+--------+-------+--------+
+
+* TOP LEVEL CONTROL
++-----------+------------+-----------------------------------+
+| Interface | Type       | Ports                             |
++-----------+------------+-----------------------------------+
+| ap_clk    | clock      | ap_clk                            |
+| ap_rst_n  | reset      | ap_rst_n                          |
+| ap_ctrl   | ap_ctrl_hs | ap_done ap_idle ap_ready ap_start |
++-----------+------------+-----------------------------------+
+
+
+================================================================
+== SW I/O Information
+================================================================
+* Top Function Arguments
++-----------+-----------+---------------------------------------------+
+| Argument  | Direction | Datatype                                    |
++-----------+-----------+---------------------------------------------+
+| inStream  | in        | stream<hls::axis<ap_int<512>, 0, 0, 0>, 0>& |
+| outStream | out       | stream<hls::axis<ap_int<512>, 0, 0, 0>, 0>& |
++-----------+-----------+---------------------------------------------+
+
+* SW-to-HW Mapping
++-----------+--------------+-----------+
+| Argument  | HW Interface | HW Type   |
++-----------+--------------+-----------+
+| inStream  | inStream     | interface |
+| outStream | outStream    | interface |
++-----------+--------------+-----------+
+
+
+================================================================
+== M_AXI Burst Information
+================================================================
+ Note: All burst requests might be further partitioned into multiple requests during RTL generation based on max_read_burst_length or max_write_burst_length settings.
+
+  No burst in design
+
+================================================================
+== Bind Op Report
+================================================================
++--------------------------+-----+--------+--------------+-----+--------+---------+
+| Name                     | DSP | Pragma | Variable     | Op  | Impl   | Latency |
++--------------------------+-----+--------+--------------+-----+--------+---------+
+| + test                   | 0   |        |              |     |        |         |
+|   add_ln70_fu_311_p2     | -   |        | add_ln70     | add | tadder | 0       |
+|   add_ln70_1_fu_317_p2   | -   |        | add_ln70_1   | add | fabric | 0       |
+|   add_ln70_2_fu_323_p2   | -   |        | add_ln70_2   | add | tadder | 0       |
+|   add_ln70_3_fu_329_p2   | -   |        | add_ln70_3   | add | tadder | 0       |
+|   add_ln70_4_fu_335_p2   | -   |        | add_ln70_4   | add | fabric | 0       |
+|   add_ln70_5_fu_341_p2   | -   |        | add_ln70_5   | add | tadder | 0       |
+|   add_ln70_6_fu_347_p2   | -   |        | add_ln70_6   | add | tadder | 0       |
+|   add_ln70_7_fu_353_p2   | -   |        | add_ln70_7   | add | fabric | 0       |
+|   add_ln70_8_fu_359_p2   | -   |        | add_ln70_8   | add | fabric | 0       |
+|   add_ln70_9_fu_365_p2   | -   |        | add_ln70_9   | add | tadder | 0       |
+|   add_ln70_10_fu_371_p2  | -   |        | add_ln70_10  | add | tadder | 0       |
+|   add_ln70_11_fu_377_p2  | -   |        | add_ln70_11  | add | fabric | 0       |
+|   add_ln70_12_fu_383_p2  | -   |        | add_ln70_12  | add | tadder | 0       |
+|   add_ln70_13_fu_389_p2  | -   |        | add_ln70_13  | add | tadder | 0       |
+|   sum_V_1_fu_395_p2      | -   |        | sum_V_1      | add | tadder | 0       |
+|   sub_ln1558_fu_409_p2   | -   |        | sub_ln1558   | sub | fabric | 0       |
+|   sub_ln1558_1_fu_429_p2 | -   |        | sub_ln1558_1 | sub | fabric | 0       |
++--------------------------+-----+--------+--------------+-----+--------+---------+
+
+
+================================================================
+== Bind Storage Report
+================================================================
+  No bind storage info in design
+
+================================================================
+== User Pragma Report
+================================================================
+* Valid Pragma Syntax
++-----------+---------------------+---------------------------------------------------+
+| Type      | Options             | Location                                          |
++-----------+---------------------+---------------------------------------------------+
+| interface | axis port=inStream  | hls_kernel_test/average.cpp:10 in test, inStream  |
+| interface | axis port=outStream | hls_kernel_test/average.cpp:11 in test, outStream |
+| pipeline  |                     | hls_kernel_test/average.cpp:18 in test            |
++-----------+---------------------+---------------------------------------------------+
+
+
