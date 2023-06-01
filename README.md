@@ -53,7 +53,7 @@ Import testbench file `testbench_toplevel.vhd` located in `vivado-stream-interfa
 
 Simulate the design. If `m_axis_tx_data_TDATA` and `m_axis_tx_data_TVALID` give the expected output value, then the kernel simulation is done.
 
-**Step 3: Build the design**
+<h3>How to build</h3>
 
 Please refer [here](https://github.com/YangZiyi121/Vitis_with_100Gbps_TCP-IP_top_k) for building steps.
 
