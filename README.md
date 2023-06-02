@@ -14,7 +14,7 @@ This repository provides a simulation document for inserting **HLS user kernel**
        * `pkt_sender`: user-kernel tcp-ip output interface to tcp+top_loopback
        
        * `test`, `test_regslice_both`: generated HLS kernel synthesis result
-   *  'sim_1/new'  -the testbench for simulation
+   *  `sim_1/new`  -the testbench for simulation
 * `vivado-stream-interfaces.sim`  -folder with input simulation stream content
    *  `session-data-in.txt`  -each three line represents one packet. The first line is the session ID for tcp-connection. The third line is the packet content [1-bit TLAST + 512-bit data].
    *  `session-event-in.txt` -The first line represents interval between two notifications. The third line is the notification content, containing tcp session ID.
